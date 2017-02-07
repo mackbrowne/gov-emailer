@@ -2,9 +2,15 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
+import angularWizard from 'angular-wizard';
+
 import template from './emule.html';
 import { name as Home } from '../home/home';
 import { name as Navigation } from '../navigation/navigation';
+
+
+import { name as MPService } from '../../services/mpService';
+import { name as ProvinceService } from '../../services/provinceService';
 
 class Emule {}
 
@@ -16,7 +22,10 @@ export default angular.module(name, [
   uiRouter,
   Home,
   Navigation,
-  'accounts.ui'
+  MPService,
+  ProvinceService,
+  'accounts.ui',
+  'mgo-angular-wizard'
 ]).component(name, {
   template,
   controllerAs: name,

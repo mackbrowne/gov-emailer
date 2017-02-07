@@ -55,7 +55,7 @@ h6 {
 .open .dropdown-toggle.btn-primary {
   background-image: none;
 }
-.btn-primary.disabled,
+/*.btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
 .btn-primary.disabled:hover,
@@ -72,7 +72,7 @@ fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
   background-color: #fed136;
   border-color: #fed136;
-}
+}*/
 .btn-primary .badge {
   color: #fed136;
   background-color: white;
@@ -224,7 +224,7 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
   header .intro-text {
-    padding-top: 300px;
+    padding-top: 100px;
     padding-bottom: 200px;
   }
   header .intro-text .intro-lead-in {

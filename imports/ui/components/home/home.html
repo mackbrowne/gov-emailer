@@ -4,9 +4,88 @@
   <header>
       <div class="container">
           <div class="intro-text">
-              <div class="intro-lead-in">Welcome To Our Studio!</div>
+
+            <wizard on-finish="finishedWizard()">
+                <wz-step wz-title="Pick Party">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Pick parties
+                    </div>
+                    <div class="col-lg-8">
+                      <button type="button" class="btn-primary" name="button">
+                        Select All
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" class="btn-primary btn-block btn-liberal" name="button">
+                        Liberal
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn-primary btn-block btn-conservative" name="button">
+                        Conservative
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn-primary btn-block btn-ndp" name="button">
+                        NDP
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn-primary btn-block btn-green" name="button">
+                        Green
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" wz-next class="btn-primary" name="button">
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                    <!-- <h1>This is the first step</h1>
+                    <p>Here you can use whatever you want. You can use other directives, binding, etc.</p>
+                    <input type="submit" wz-next value="Continue" /> -->
+                </wz-step>
+                <wz-step wz-title="Pick Regions">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Pick parties
+                    </div>
+                    <div class="col-lg-8">
+                      <button type="button" class="btn-primary" name="button">
+                        Select All
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4" ng-repeat="province in home.provinces">
+                        <button type="button" class="btn-primary btn-block" name="button" ng-click="home.clickProvince(province)">
+                          {{province}}
+                        </button>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" wz-next class="btn-primary" name="button">
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                </wz-step>
+                <wz-step wz-title="Email">
+                  <button type="button" name="button" class="btn-primary">
+                    EMAIL NOW
+                  </button>
+                </wz-step>
+            </wizard>
+              <!-- <div class="intro-lead-in">Welcome To Our Studio!</div>
               <div class="intro-heading">It's Nice To Meet You</div>
-              <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+              <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a> -->
           </div>
       </div>
   </header>

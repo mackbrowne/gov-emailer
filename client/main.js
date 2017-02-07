@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'tether/dist/css/tether.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'angular-wizard/dist/angular-wizard.css';
 import "../imports/ui/components/emule/agency.css";
 
 import { Meteor } from 'meteor/meteor';

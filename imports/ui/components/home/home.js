@@ -7,13 +7,19 @@ import jqueryEasing from 'jquery.easing';
 import tether from 'tether';
 import bootstrap from 'bootstrap';
 
+//import jsonMP from '../../../../public/parliment.json';
+
 import template from './home.html';
 
 class Home {
-  constructor($scope, $reactive) {
+  constructor($scope, $reactive, mpService, provinceService) {
     'ngInject';
 
     $reactive(this).attach($scope);
+
+    this.mps = mpService.mps;
+
+    this.provinces = provinceService.provinces;
 
     // Agency Theme JavaScript
     // jQuery for page scrolling feature - requires jQuery Easing plugin
