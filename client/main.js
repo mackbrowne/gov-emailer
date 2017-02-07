@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { Meteor } from 'meteor/meteor';
 
-import { name as Socially } from '../imports/ui/components/socially/socially';
+import { name as Emule } from '../imports/ui/components/emule/emule';
 
 function onReady() {
   angular.bootstrap(document, [
-    Socially
+    Emule
   ], {
     strictDi: true
   });

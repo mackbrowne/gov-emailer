@@ -2,27 +2,25 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import template from './socially.html';
-import { name as PartiesList } from '../partiesList/partiesList';
-import { name as PartyDetails } from '../partyDetails/partyDetails';
+import template from './emule.html';
+import { name as PartiesList } from '../home/home';
 import { name as Navigation } from '../navigation/navigation';
 
-class Socially {}
+class Emule {}
 
-const name = 'socially';
+const name = 'emule';
 
 // create a module
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
   PartiesList,
-  PartyDetails,
   Navigation,
   'accounts.ui'
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: Socially
+  controller: Emule
 })
   .config(config)
   .run(run);
@@ -32,7 +30,7 @@ function config($locationProvider, $urlRouterProvider) {
 
   $locationProvider.html5Mode(true);
 
-  $urlRouterProvider.otherwise('/parties');
+  $urlRouterProvider.otherwise('/');
 }
 
 function run($rootScope, $state) {
@@ -41,7 +39,7 @@ function run($rootScope, $state) {
   $rootScope.$on('$stateChangeError',
     (event, toState, toParams, fromState, fromParams, error) => {
       if (error === 'AUTH_REQUIRED') {
-        $state.go('parties');
+        $state.go('home');
       }
     }
   );
