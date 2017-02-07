@@ -21,7 +21,7 @@ Requirements
     Website
     Networking, linkedin, facebook page, twitter,
   Contact info for people in parliament
-    email, postal code, phone number, text, Address
+    email, postal cod e, phone number, text, Address
 
 
 Extra
