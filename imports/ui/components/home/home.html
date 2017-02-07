@@ -12,30 +12,15 @@
                       Pick parties
                     </div>
                     <div class="col-lg-8">
-                      <button type="button" class="btn-primary" name="button">
+                      <button type="button" class="btn-primary" name="button" ng-click="home.selectAll(home.selectedParties)">
                         Select All
                       </button>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col">
-                      <button type="button" class="btn-primary btn-block btn-liberal" name="button">
-                        Liberal
-                      </button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn-primary btn-block btn-conservative" name="button">
-                        Conservative
-                      </button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn-primary btn-block btn-ndp" name="button">
-                        NDP
-                      </button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn-primary btn-block btn-green" name="button">
-                        Green
+                    <div class="col" ng-repeat="party in home.selectedParties">
+                      <button type="button" class="btn-primary btn-block" name="button" ng-click="home.select(party)" ng-class="{'btn-{{party.name}}': party.selected ===false }">
+                        {{party.name}}
                       </button>
                     </div>
                   </div>
@@ -57,15 +42,15 @@
                       Pick parties
                     </div>
                     <div class="col-lg-8">
-                      <button type="button" class="btn-primary" name="button">
+                      <button type="button" class="btn-primary" name="button" ng-click="home.selectAll(home.provinces)">
                         Select All
                       </button>
                     </div>
                   </div>
                   <div class="row">
                       <div class="col-md-4" ng-repeat="province in home.provinces">
-                        <button type="button" class="btn-primary btn-block" name="button" ng-click="home.clickProvince(province)">
-                          {{province}}
+                        <button type="button" class="btn-primary btn-block" name="button" ng-click="home.select(province)" ng-class="{'btn-liberal': province.selected ===true }">
+                          {{province.name}}
                         </button>
                       </div>
                   </div>
@@ -78,7 +63,7 @@
                   </div>
                 </wz-step>
                 <wz-step wz-title="Email">
-                  <button type="button" name="button" class="btn-primary">
+                  <button type="button" name="button" class="btn-primary" ng-click="home.emailNow()">
                     EMAIL NOW
                   </button>
                 </wz-step>
