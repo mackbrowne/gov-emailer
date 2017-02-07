@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <p id="party">Please Select a Party</p>
+    <div class="btn-group btn-group-justified">
+        <a onclick="document.getElementById('party').innerHTML = 'Liberal';" class="btn btn-danger">Liberal</a>
+        <a onclick="document.getElementById('party').innerHTML = 'Conservative';" class="btn btn-primary">Conservative</a>
+        <a onclick="document.getElementById('party').innerHTML = 'NDP';" class="btn btn-warning">NDP</a>
+        <a onclick="document.getElementById('party').innerHTML = 'Green';" class="btn btn-success">Green</a>
+    </div>
+    <p id="province">Please Select a Province</p>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a Province Here
+      <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a onclick="document.getElementById('province').innerHTML = 'Ontario'; add('text');" class="btn btn-danger">Ontario</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Quebec';" class="btn btn-danger">Quebec</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'British Columbia';" class="btn btn-danger">British Columbia</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Alberta';" class="btn btn-danger">Alberta</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Manatoba';" class="btn btn-danger">Manatoba</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Saskatawan';" class="btn btn-danger">Saskatawan</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Nova Scotia';" class="btn btn-danger">Nova Scotia</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'New Brunswick';" class="btn btn-danger">New Brunswick</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Newfoundland and Labrador';" class="btn btn-danger">Newfoundland and Labrador</a></li>
+            <li><a onclick="document.getElementById('province').innerHTML = 'Prince Edward Island';" class="btn btn-danger">Prince Edward Island</a></li>
+        </ul>
+    </div>
+    <p id="fooBar">Fields:</p>
+</body>
+
+<script>
+    function add(type) {
+        //Create an input type dynamically.
+        var element = document.createElement("button");
+        //Assign different attributes to the element.
+        element.type = type;
+        element.value = type; // Really? You want the default value to be the type string?
+        element.name = type; // And the name too?
+        element.innerHTML = "Get list of MP's"
+        /*element.onclick = function() { // Note this is a function
+            alert("blabla");
+        };*/
+
+        var foo = document.getElementById("fooBar");
+        //Append the element in page (in span).
+        foo.appendChild(element);
+    }
+    document.getElementById("btnAdd").onclick = function() {
+        add("text");
+    };
+
+
+    if (document.getElementById("party").innerHTML != "Please Select a Party" && document.getElementById("province").innerHTML != "lease Select a Province") {
+        add("text");
+
+    }
+</script>
+
+</html>
