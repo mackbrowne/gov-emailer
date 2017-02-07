@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import template from './emule.html';
-import { name as PartiesList } from '../home/home';
+import { name as Home } from '../home/home';
 import { name as Navigation } from '../navigation/navigation';
 
 class Emule {}
@@ -14,7 +14,7 @@ const name = 'emule';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  PartiesList,
+  Home,
   Navigation,
   'accounts.ui'
 ]).component(name, {
