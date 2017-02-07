@@ -49,7 +49,7 @@
                   </div>
                   <div class="row">
                       <div class="col-md-4" ng-repeat="province in home.provinces">
-                        <button type="button" class="btn-primary btn-block" name="button" ng-click="home.select(province)" ng-class="{'btn-liberal': province.selected ===true }">
+                        <button type="button" class="btn-primary btn-block" name="button" ng-click="home.select(province)" ng-class="{'btn-Liberal': province.selected ===true }">
                           {{province.name}}
                         </button>
                       </div>
@@ -63,9 +63,19 @@
                   </div>
                 </wz-step>
                 <wz-step wz-title="Email">
-                  <button type="button" name="button" class="btn-primary" ng-click="home.emailNow()">
-                    EMAIL NOW
+                  <ul>
+                    <li ng-repeat="mp in home.selectedMPS">
+                      {{mp.firstName}} {{mp.lastName}} - {{mp.email}}
+                    </li>
+                  </ul>
+                  <button ng-hide="home.selectedMPS.length > 0" type="button" name="button" class="btn-primary" ng-click="home.generateMPS()">
+                    Find MPS
                   </button>
+                  <a ng-show="home.selectedMPS.length > 0" ng-href="mailto:{{home.getEmails()}}?Subject=I%20am%20pissed" target="_blank">
+                    <button type="button" name="button" class="btn-primary">
+                      EMAIL NOW
+                    </button>
+                  </a>
                 </wz-step>
             </wizard>
               <!-- <div class="intro-lead-in">Welcome To Our Studio!</div>

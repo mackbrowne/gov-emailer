@@ -1388,7 +1388,7 @@ class MPService {
       "lastName": "May",
       "constituency": "Saanich-Gulf Islands",
       "province": "British Columbia",
-      "party": "Green Party",
+      "party": "Green",
       "email": "Elizabeth.May@parl.gc.ca"
     }, {
       "firstName": "Kelly",

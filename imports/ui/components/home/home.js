@@ -18,6 +18,7 @@ class Home {
     $reactive(this).attach($scope);
 
     this.mps = mpService.mps;
+    this.selectedMPS = [];
 
     this.provinces = provinceService.provinces.map((province) => {
       return {
@@ -27,10 +28,10 @@ class Home {
     });
 
     let parties = [
-      'liberal',
-      'ndp',
-      'conservative',
-      'green'
+      'Liberal',
+      'NDP',
+      'Conservative',
+      'Green'
     ];
 
     this.selectedParties = parties.map((party) => {
@@ -82,11 +83,32 @@ class Home {
     });
   }
 
-  emailNow() {
-    // this.mps.filter((mp)=>{
-    //
-    // });
-    // debugger;
+  isSelected(list, name){
+    let isIncluded = false;
+    list.filter((listItem)=>{
+      return listItem.selected === true;
+    }).forEach((item)=>{
+      if(item.name === name){
+        isIncluded = true;
+      }
+    });
+    return isIncluded;
+  }
+
+  generateMPS() {
+    this.selectedMPS = this.mps.filter((mp)=>{
+      if( this.isSelected(this.provinces ,mp.province) && this.isSelected(this.selectedParties, mp.party) ){
+        return true;
+      }else{
+        return false;
+      }
+    });
+  }
+
+  getEmails() {
+    return this.selectedMPS.map((mp)=>{
+      return mp.email;
+    }).toLocaleString();
   }
 }
 
