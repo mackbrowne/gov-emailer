@@ -6,6 +6,7 @@ import angularWizard from 'angular-wizard';
 
 import template from './emule.html';
 import { name as Home } from '../home/home';
+import { name as Todo } from '../todo/todo';
 import { name as Navigation } from '../navigation/navigation';
 
 
@@ -21,6 +22,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   Home,
+  Todo,
   Navigation,
   MPService,
   ProvinceService,
