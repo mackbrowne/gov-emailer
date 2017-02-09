@@ -2,11 +2,11 @@ module.exports = {
   servers: {
     one: {
       host: '52.14.63.199',
-      username: 'root'
+      username: 'ubuntu',
       // pem:
       // password:
       // or leave blank for authenticate from ssh-agent
-      "pem": "~/yo.pem
+      "pem": "../../yo.pem"
     }
   },
 
@@ -20,7 +20,7 @@ module.exports = {
       serverOnly: true,
     },
     env: {
-      ROOT_URL: 'http://52.14.63.199',
+      ROOT_URL: 'http://emailer.macbrowne.com',
       MONGO_URL: 'mongodb://localhost/meteor'
     },
 
